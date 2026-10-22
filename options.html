@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title data-i18n="optionsTitle">Settings · Search Default Filters</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main>
+  <header><p class="eyebrow">SEARCH DEFAULTS</p><h1 data-i18n="heading">Start every search with your preferences</h1><p data-i18n="intro">Configure Google and Bing separately. Choices made on the search page take priority.</p></header>
+  <nav aria-label="Search engines" data-i18n-aria-label="engines" class="tabs"><button type="button" data-engine="google" aria-pressed="true">Google</button><button type="button" data-engine="bing" aria-pressed="false">Bing</button></nav>
+  <form id="settings" action="options.html" method="get">
+    <div class="engine-heading"><h2 id="engine-name">Google</h2><label class="switch"><input type="checkbox" name="enabled"><span data-i18n="enableDefaults">Enable default filters</span></label></div>
+    <fieldset><legend data-i18n="websites">Websites</legend><p class="hint" data-i18n="websiteHint"></p><div id="website-lists"></div></fieldset>
+    <fieldset><legend data-i18n="content">Search content</legend><div id="content-lists"></div><p class="hint" data-i18n="contentHint"></p></fieldset>
+    <fieldset><legend data-i18n="timeAndOther">Time and other options</legend><label><span data-i18n="timeRange">Time range</span><select name="time"></select></label><div id="dates" class="fields" hidden><label><span data-i18n="startDate">Start date</span><input type="date" name="startDate"></label><label><span data-i18n="endDate">End date</span><input type="date" name="endDate"></label></div><label id="verbatim-label" class="check"><input type="checkbox" name="verbatim" aria-describedby="verbatim-hint"><span data-i18n="verbatim">Verbatim</span></label><p id="verbatim-hint" class="hint" data-i18n="verbatimHint"></p></fieldset>
+    <section class="preview" aria-labelledby="preview-title"><h2 id="preview-title" data-i18n="example">Search example</h2><p class="hint" data-i18n="exampleHint"></p><dl><dt data-i18n="originalQuery">Original query</dt><dd data-i18n="sampleQuery">climate research</dd><dt data-i18n="sentQuery">Query sent</dt><dd><output id="preview"></output></dd><dt data-i18n="parameters">Filter parameters</dt><dd><output id="preview-params"></output></dd></dl></section>
+    <footer><button type="submit" class="primary" data-i18n="saveEngine">Save this engine</button><button type="button" id="reset" data-i18n="resetEngine">Reset this engine</button><p class="hint" data-i18n="saveHint"></p></footer>
+  </form>
+  <p id="status" role="status" aria-live="polite" tabindex="-1"></p>
+</main><script type="module" src="options.js"></script>
+</body></html>
